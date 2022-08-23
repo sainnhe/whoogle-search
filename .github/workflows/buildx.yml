@@ -1,11 +1,7 @@
 name: buildx
 
 on:
-  workflow_run:
-    workflows: ["docker_main"]
-    branches: [main]
-    types:
-      - completed
+  workflow_dispatch:
   push:
     tags:
       - '*'
@@ -14,9 +10,6 @@ jobs:
   on-success:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for tests to succeed
-        if: ${{ github.event.workflow_run.conclusion != 'success' && startsWith(github.ref, 'refs/tags') != true }}
-        run: exit 1
       - name: checkout code
         uses: actions/checkout@v2
       - name: install buildx
@@ -36,24 +29,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: build and push the image
-        if: startsWith(github.ref, 'refs/heads/main') && github.actor == 'benbusby'
+        if: startsWith(github.ref, 'refs/heads/main') && github.actor == 'sainnhe'
         run: |
           docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
           docker buildx ls
           docker buildx build --push \
-            --tag benbusby/whoogle-search:latest \
-            --platform linux/amd64,linux/arm/v7,linux/arm64 .
+            --tag sainnhe/whoogle-search:latest \
+            --platform linux/amd64,linux/arm64/v8 .
           docker buildx build --push \
-            --tag ghcr.io/benbusby/whoogle-search:latest \
-            --platform linux/amd64,linux/arm/v7,linux/arm64 .
-      - name: build and push tag
-        if: startsWith(github.ref, 'refs/tags')
-        run: |
-          docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-          docker buildx ls
-          docker buildx build --push \
-            --tag benbusby/whoogle-search:${GITHUB_REF#refs/*/v}\
-            --platform linux/amd64,linux/arm/v7,linux/arm64 .
-          docker buildx build --push \
-            --tag ghcr.io/benbusby/whoogle-search:${GITHUB_REF#refs/*/v}\
-            --platform linux/amd64,linux/arm/v7,linux/arm64 .
+            --tag ghcr.io/sainnhe/whoogle-search:latest \
+            --platform linux/amd64,linux/arm64/v8 .
