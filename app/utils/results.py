@@ -29,18 +29,35 @@ BLACKLIST = [
 ]
 
 SITE_ALTS = {
-    'twitter.com': os.getenv('WHOOGLE_ALT_TW', 'farside.link/nitter'),
-    'youtube.com': os.getenv('WHOOGLE_ALT_YT', 'farside.link/invidious'),
-    'instagram.com': os.getenv('WHOOGLE_ALT_IG', 'farside.link/bibliogram/u'),
-    'reddit.com': os.getenv('WHOOGLE_ALT_RD', 'farside.link/libreddit'),
-    **dict.fromkeys([
-        'medium.com',
-        'levelup.gitconnected.com'
-    ], os.getenv('WHOOGLE_ALT_MD', 'farside.link/scribe')),
-    'imgur.com': os.getenv('WHOOGLE_ALT_IMG', 'farside.link/rimgo'),
-    'wikipedia.org': os.getenv('WHOOGLE_ALT_WIKI', 'farside.link/wikiless'),
-    'imdb.com': os.getenv('WHOOGLE_ALT_IMDB', 'farside.link/libremdb'),
-    'quora.com': os.getenv('WHOOGLE_ALT_QUORA', 'farside.link/quetre')
+    'scholar.google.com': 'scholar.google.sainnhe.dev',
+    'translate.google.com': 'translate.google.sainnhe.dev',
+    'github.com': 'github.sainnhe.dev',
+    'gist.github.com': 'gist.github.sainnhe.dev',
+    'reddit.com': os.getenv('WHOOGLE_ALT_RD', 'libreddit.pussthecat.org'),
+    'medium.com': os.getenv('WHOOGLE_ALT_MD', 'scribe.pussthecat.org'),
+    'quora.com': os.getenv('WHOOGLE_ALT_QUORA', 'quetre.pussthecat.org'),
+    'imgur.com': os.getenv('WHOOGLE_ALT_IMG', 'rimgo.pussthecat.org'),
+    'imdb.com': os.getenv('WHOOGLE_ALT_IMDB', 'libremdb.pussthecat.org'),
+    'twitter.com': os.getenv('WHOOGLE_ALT_TW', 'nt.vern.cc'),
+    'wikipedia.org': os.getenv('WHOOGLE_ALT_WIKI', 'wl.vern.cc'),
+    'm.youtube.com': os.getenv('WHOOGLE_ALT_YT', 'siteproxy.sainnhe.dev/https/m.youtube.com'),
+    'www.youtube.com': os.getenv('WHOOGLE_ALT_YT', 'siteproxy.sainnhe.dev/https/www.youtube.com'),
+    'www.reuters.com': 'siteproxy.sainnhe.dev/https/www.reuters.com',
+    'www.bbc.com': 'siteproxy.sainnhe.dev/https/www.bbc.com',
+    'www.nytimes.com': 'siteproxy.sainnhe.dev/https/www.nytimes.com',
+    'www.bloomberg.com': 'siteproxy.sainnhe.dev/https/www.bloomberg.com',
+    'www.forbes.com': 'siteproxy.sainnhe.dev/https/www.forbes.com',
+    'time.com': 'siteproxy.sainnhe.dev/https/time.com',
+    'www.washingtonpost.com': 'siteproxy.sainnhe.dev/https/www.washingtonpost.com',
+    'www.yahoo.com': 'siteproxy.sainnhe.dev/https/www.yahoo.com',
+    'news.yahoo.com': 'siteproxy.sainnhe.dev/https/news.yahoo.com',
+    'finance.yahoo.com': 'siteproxy.sainnhe.dev/https/finance.yahoo.com',
+    'www.cbs.com': 'siteproxy.sainnhe.dev/https/www.cbs.com',
+    'www.nbcnews.com': 'siteproxy.sainnhe.dev/https/www.nbcnews.com',
+    'nypost.com': 'siteproxy.sainnhe.dev/https/nypost.com',
+    'news.google.com': 'siteproxy.sainnhe.dev/https/news.google.com',
+    'www.pinterest.com': 'siteproxy.sainnhe.dev/https/www.pinterest.com',
+    'news.ycombinator.com': 'siteproxy.sainnhe.dev/https/news.ycombinator.com',
 }
 
 
