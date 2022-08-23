@@ -31,8 +31,6 @@ BLACKLIST = [
 SITE_ALTS = {
     'scholar.google.com': 'scholar.google.sainnhe.dev',
     'translate.google.com': 'translate.google.sainnhe.dev',
-    'github.com': 'github.sainnhe.dev',
-    'gist.github.com': 'gist.github.sainnhe.dev',
     'reddit.com': os.getenv('WHOOGLE_ALT_RD', 'libreddit.pussthecat.org'),
     'medium.com': os.getenv('WHOOGLE_ALT_MD', 'scribe.pussthecat.org'),
     'quora.com': os.getenv('WHOOGLE_ALT_QUORA', 'quetre.pussthecat.org'),
